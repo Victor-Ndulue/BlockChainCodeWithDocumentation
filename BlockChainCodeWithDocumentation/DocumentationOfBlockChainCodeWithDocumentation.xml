@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BlockChainCodeWithDocumentation</name>
+    </assembly>
+    <members>
+        <member name="T:Block">
+            <summary>
+            The <c>Block</c> class 
+            Represents an individual block in the blockchain.
+            <list type="bullet">
+            <item>
+            <term>CalculateHash</term>
+            <description>Encodes and hashes the summation of TimeStamp, Data and PreviousHash. 
+            Returns a string value assigned to the Hash property</description>
+            </item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:Block.#ctor(System.DateTime,System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:Block"/>
+            </summary>
+            <param name="timestamp"> The time of creation</param>
+            <param name="data">data associated with block</param>
+            <param name="previousHash">value of hash before hash to be created</param>
+        </member>
+        <member name="M:Block.CalculateHash">
+            <summary>
+            This method computes the hash of the block based on its Timestamp, Data, and PreviousHash.
+            It uses the SHA-256 cryptographic hash function to generate the hash.
+            </summary>
+            <returns>String value of hashed byte array</returns>
+        </member>
+        <member name="T:Blockchain">
+            <summary>
+            The <c>Blockchain</c> class
+             Contains all method invloved in creating a blockchain(a list of blocks).
+            <list type="bullet">
+            <item>
+            <term>Blockchain</term>
+            <description>Constructor</description>
+            </item>
+            <item>
+            <term>InitializeBlockchain</term>
+            <description>Initializes an instance and adds it to the blockchain</description>
+            </item>
+            <item> 
+            <term>AddBlockToChain <see cref="M:Blockchain.AddBlockToChain(System.DateTime,System.String,System.String)"/></term>
+            <description>Uses the block constructor to create a block and adds it to a chain list</description>
+            </item>
+            <item>
+            <term>GetLatestBlock <see cref="M:Blockchain.GetLatestBlock"/></term>
+            <description>returns the value of last hash</description>
+            </item>
+            <item>
+            <term>PrintChain <see cref="M:Blockchain.PrintChain"/></term>
+            <description>Iterates through the chain list and prints each block property value to the console</description>
+            </item>
+            </list>
+            </summary>
+        </member>
+        <member name="F:Blockchain.chain">
+            <summary>
+            This private field holds the list of blocks, forming the blockchain.
+            </summary>
+        </member>
+        <member name="M:Blockchain.#ctor">
+            <summary>
+             Initializes a new instance of the <see cref="T:Blockchain"/> class.
+            </summary>
+        </member>
+        <member name="M:Blockchain.InitializeBlockchain">
+            <summary>
+             Initializes the blockchain with a genesis block.
+            </summary>
+        </member>
+        <member name="M:Blockchain.AddBlockToChain(System.DateTime,System.String,System.String)">
+            <summary>
+             Adds a new block to the blockchain with the provided timestamp, data, and previousHash.
+            </summary>
+             <param name="timestamp">The timestamp of the new block.</param>
+             <param name="data">The data associated with the new block.</param>
+             <param name="previousHash">The hash of the previous block.</param>
+        </member>
+        <member name="M:Blockchain.GetLatestBlock">
+            <summary>
+             Gets the latest block in the blockchain.
+            </summary>
+             <returns>The latest block.</returns>
+        </member>
+        <member name="M:Blockchain.PrintChain">
+            <summary>
+             Prints the details of all blocks in the blockchain.
+            </summary>
+        </member>
+    </members>
+</doc>
